@@ -1,0 +1,22 @@
+
+.about-first-sec {
+    > div {
+      width: 50%;
+    }
+    div img {
+      width: 50%;
+      display: block;
+      margin: 0px auto;
+      border-radius: 10px;
+      @media screen and (max: width 500px) {
+        width: 100%;
+      }
+    }
+  }
+  .doc{
+    .flex {
+      img{
+        width: 32px;
+        margin-right: 10px;      }
+    }
+  }

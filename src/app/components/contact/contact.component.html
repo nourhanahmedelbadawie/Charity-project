@@ -1,0 +1,98 @@
+<app-nav [breadcrumb]="currentbreadcrumb"></app-nav>
+<div class="container">
+  <div class="row">
+    <section class="flex">
+      <div>
+        <h3>Contact us</h3>
+        <h4>Get In Touch</h4>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi magni
+          explicabo sint neque reprehenderit,
+        </p>
+        <div class="icons">
+          <div class="flex align-items-start">
+            <img src="../../../assets/images/contact/phone.png" />
+            <p>
+              <span> Phone </span>
+              +1234567890
+            </p>
+          </div>
+          <div class="flex align-items-start">
+            <img src="../../../assets/images/contact/location.png" />
+            <p>
+              <span> Location </span>
+              lorem , ipsum
+            </p>
+          </div>
+          <div class="flex align-items-start">
+            <img src="../../../assets/images/contact/mail.png" />
+            <p>
+              <span> Email </span>
+              demo@gmail.com
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form">
+        <mat-card>
+          <form [formGroup]="contactForm" class="form-container">
+            <div class="row">
+              <div class="col-md-6">
+                <mat-form-field appearance="outline">
+                  <mat-label>Full name</mat-label>
+
+                  <input
+                    formControlName="name"
+                    matInput=""
+                    placeholder="Full name"
+                  />
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                  <mat-label>Email</mat-label>
+
+                  <input
+                    formControlName="email"
+                    matInput=""
+                    placeholder="Full name"
+                  />
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                  <mat-label>Phone Number</mat-label>
+
+                  <input
+                    formControlName="number"
+                    matInput=""
+                    placeholder="Full name"
+                  />
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                  <mat-label>Subject </mat-label>
+
+                  <input
+                    formControlName="subject"
+                    matInput=""
+                    placeholder="Full name"
+                  />
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                  <mat-label>Message</mat-label>
+
+                  <textarea
+                    matInput
+                    formControlName="msg"
+                    placeholder="Message"
+                  ></textarea>
+                </mat-form-field>
+                <button>
+                  Submit
+                </button>
+
+                <p class="currency">LE</p>
+              </div>
+            </div>
+          </form>
+        </mat-card>
+      </div>
+    </section>
+  </div>
+</div>
