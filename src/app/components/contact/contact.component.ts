@@ -30,23 +30,8 @@ export class ContactComponent implements OnInit {
   });
 
 
-  onSelectionChange(ev) {
-    
-    console.log('Change', ev)
+  sendcontactForm(){
+    console.log(this.contactForm)
   }
-
-  trackBy(model) {
-    return model.value;
-  }
-  onSubmit() {
-   console.log('form data is ', this.contactForm.value);
-  }
-
-  
-
-  fawryForm= this.fb.group({
-    name: ['']
-
-  });
 
 }

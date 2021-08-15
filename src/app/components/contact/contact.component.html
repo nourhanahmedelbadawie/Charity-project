@@ -1,7 +1,7 @@
-<app-nav [breadcrumb]="currentbreadcrumb"></app-nav>
-<div class="container">
+<app-nav [breadcrumb]="currentbreadcrumb" class="mb-80"></app-nav>
+<div class="container mb-40 pt-5">
   <div class="row">
-    <section class="flex">
+    <section class="flex getintouch">
       <div>
         <h3>Contact us</h3>
         <h4>Get In Touch</h4>
@@ -33,64 +33,67 @@
           </div>
         </div>
       </div>
-      <div class="contact-form">
+      <div class="contact-form donation-form">
         <mat-card>
-          <form [formGroup]="contactForm" class="form-container">
-            <div class="row">
-              <div class="col-md-6">
-                <mat-form-field appearance="outline">
-                  <mat-label>Full name</mat-label>
+       
+          <form
+          [formGroup]="contactForm"
+          class="form-container donation-form  "
+          (ngSubmit)="sendcontactForm()"
+        >
+          <mat-form-field appearance="outline">
+            <mat-label>Full Name</mat-label>
 
-                  <input
-                    formControlName="name"
-                    matInput=""
-                    placeholder="Full name"
-                  />
-                </mat-form-field>
-                <mat-form-field appearance="outline">
-                  <mat-label>Email</mat-label>
+            <input
+              formControlName="name"
+              matInput=""
+              placeholder="Full Name"
+              type="text" required
+            />
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Email</mat-label>
 
-                  <input
-                    formControlName="email"
-                    matInput=""
-                    placeholder="Full name"
-                  />
-                </mat-form-field>
-                <mat-form-field appearance="outline">
-                  <mat-label>Phone Number</mat-label>
+            <input
+              formControlName="name"
+              matInput=""
+              placeholder="Email"
+              type="email" required
+            />
+          </mat-form-field>
+           <mat-form-field appearance="outline">
+            <mat-label>Phone Number</mat-label>
 
-                  <input
-                    formControlName="number"
-                    matInput=""
-                    placeholder="Full name"
-                  />
-                </mat-form-field>
-                <mat-form-field appearance="outline">
-                  <mat-label>Subject </mat-label>
+            <input
+              formControlName="number"
+              matInput=""
+              placeholder="Phone Number"
+              type="text" required
+            />
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Subject</mat-label>
 
-                  <input
-                    formControlName="subject"
-                    matInput=""
-                    placeholder="Full name"
-                  />
-                </mat-form-field>
-                <mat-form-field appearance="outline">
-                  <mat-label>Message</mat-label>
+            <input
+              formControlName="email"
+              matInput=""
+               pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}" type="email"  required
+              placeholder="Subject"
+            />
+          </mat-form-field>
+          <mat-form-field appearance="outline" >
+            <mat-label>Message</mat-label>
 
-                  <textarea
-                    matInput
-                    formControlName="msg"
-                    placeholder="Message"
-                  ></textarea>
-                </mat-form-field>
-                <button>
-                  Submit
-                </button>
+            <input
+              formControlName="msg"
+              matInput=""
+          type="text"  required
+              placeholder="Message"
+            />
+          </mat-form-field>
 
-                <p class="currency">LE</p>
-              </div>
-            </div>
-          </form>
+          <button type="submit" [disabled]="!contactForm.valid">Submit</button>
+        </form>
         </mat-card>
       </div>
     </section>

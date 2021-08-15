@@ -46,32 +46,34 @@
     <section class="flex choose mb-40">
       <div>
         <h5 class="color-pri">
-          <span>02</span>
-          Help peaple
+          <span>{{choose[chooseContent].num}}
+          </span>
+          {{choose[chooseContent].title}}
         </h5>
-        <p class="px-4">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-          Reprehenderit doloribus dolor quidem perspiciatis iste quam deserunt
-          tenetur rerum fugiat blanditiis. Dolor officiis optio voluptas tempore
-          vero omnis facere laudantium voluptatem.
+        <p class="px-4" >
+{{choose[chooseContent].content}}
         </p>
       </div>
       <div class="icons">
-        <div>
-          <div class="img"></div>
+        <div (click)="setChooseContent(0)">
+          <div class="img" ></div>
         </div>
-        <div>
-          <div class="img"></div>
-        </div>
-
-        <div>
-          <div class="img"></div>
+        <div (click)="setChooseContent(1)">
+          <div class="img" ></div>
         </div>
 
-        <div>
-          <div class="img"></div>
+        <div (click)="setChooseContent(2)">
+          <div class="img" ></div>
+        </div>
+
+        <div (click)="setChooseContent(3)">
+          <div class="img" ></div>
         </div>
       </div>
+
+
+
+
     </section>
   </div>
 </div>
