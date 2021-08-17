@@ -11,5 +11,10 @@ export class ServicesComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  currentbreadcrumb:{}={
+    title:"Partners",
+    subtitle:"Partners",
+    bg:"../../../assets/images/about/about_manner.jpg",
+    link:"/services"
+  }
 }
