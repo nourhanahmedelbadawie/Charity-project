@@ -26,7 +26,7 @@
 
                   <a class="nav-link active" routerLink="/">Contact us</a>
 
-                  <a class="nav-link active" routerLink="/">Services</a>
+                  <a class="nav-link active" routerLink="/">partners</a>
                 </div>
 
                 <div class="links-inside">
@@ -74,14 +74,15 @@
             <form
               [formGroup]="subscribeForm"
               (ngSubmit)="subscribe()"
-              class="letter flex  donation-form"
+              class="letter flex donation-form"
             >
               <span> News Letter Through </span>
 
               <section class="radioBtns">
                 <div class="radiobtn">
                   <input
-                    type="radio" required
+                    type="radio"
+                    required
                     id="huey"
                     formControlName="type"
                     value="email"
@@ -92,7 +93,8 @@
 
                 <div class="radiobtn">
                   <input
-                    type="radio" required
+                    type="radio"
+                    required
                     id="dewey"
                     formControlName="type"
                     value="whatsapp"
@@ -102,7 +104,8 @@
 
                 <div class="radiobtn">
                   <input
-                    type="radio" required
+                    type="radio"
+                    required
                     id="louie"
                     formControlName="type"
                     value="telegram"
@@ -110,10 +113,8 @@
                   <label for="louie">Telegram</label>
                 </div>
               </section>
-        
 
-            <div class="subscribe">
-            
+              <div class="subscribe">
                 <div class="field">
                   <mat-form-field appearance="outline">
                     <mat-label>Enter Your Email</mat-label>
@@ -122,7 +123,9 @@
                       formControlName="email"
                       matInput=""
                       placeholder="Enter Your Email"
-                       pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}" type="email"  required
+                      pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}"
+                      type="email"
+                      required
                     />
                   </mat-form-field>
 
@@ -130,9 +133,8 @@
                     Subscribe
                   </button>
                 </div>
-           
-            </div>
-          </form>
+              </div>
+            </form>
           </div>
         </div>
       </div>

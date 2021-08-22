@@ -42,7 +42,7 @@
               <a class="nav-link" href="#" routerLink="/document">Documents</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#" routerLink="/services">Partners</a>
+              <a class="nav-link" href="#" routerLink="/partners">Partners</a>
             </li>
           </ul>
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -64,13 +64,12 @@
           <a class="nav-link" routerLink="/">Home</a> <span> ></span>
           {{ breadcrumb.title }}
         </p>
-        
-         <h4>
 
+        <h4>
           <a class="nav-link" routerLink="{{ breadcrumb.link }}">{{
             breadcrumb.subtitle
-          }}</a></h4>
-        
+          }}</a>
+        </h4>
       </div>
       <div *ngIf="breadcrumb.home" class="header-home">
         <div class="grid">
@@ -94,7 +93,9 @@
         </div>
 
         <div class="flex">
-          <a (click)="goDown()" class="arrow-down"> <i class="fas fa-arrow-down"></i> </a>
+          <a (click)="goDown()" class="arrow-down">
+            <i class="fas fa-arrow-down"></i>
+          </a>
           <div>
             <div class="phone-icon">
               <div class="text-center">

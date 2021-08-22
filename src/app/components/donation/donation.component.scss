@@ -97,6 +97,9 @@ img.about_icon{
   padding-left: 60px;
   padding-right: 60px;
   border-radius: 18px;
+  &:hover{
+    color: white !important;
+  }
 }
 
 .select-amount button,
