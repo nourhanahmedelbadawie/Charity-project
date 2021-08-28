@@ -1,0 +1,52 @@
+.flex{
+    display: flex;
+    background-color: white;
+    >div{
+        width: 50%;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        img{
+            
+    max-width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+
+        }
+        FORM{
+            width: 50% ;
+            input{
+         
+                    border-radius: 18px;
+                    border: 1px solid #2E3A60;
+                    position: relative;
+
+            }
+            
+            .email::before ,.pass::before{
+                content: "";
+                background-image: url(../../../assets/img/images-admin/email.svg);
+                display: block;
+                position: absolute;
+                width: 10px;
+                height: 10px;
+                top: 0px;
+                right:0px
+            }
+             
+        }
+        .btn{
+            background-color: #28246B;
+            border-radius: 25px;
+
+            width: 100%;
+            padding: 10px 2px;
+            color: white;
+        }
+    }
+}
+*{
+    color: #2E3A60;
+}
