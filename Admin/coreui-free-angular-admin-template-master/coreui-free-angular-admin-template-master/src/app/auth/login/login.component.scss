@@ -7,6 +7,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        position: relative;
         img{
             
     max-width: 100%;
@@ -15,25 +16,46 @@
     object-position: center;
 
         }
+        img:nth-of-type(2)
+        {
+            position: absolute;
+           
+            width: 200px;
+    object-fit: contain;
+    height: 146px;
+        }
         FORM{
             width: 50% ;
             input{
          
                     border-radius: 18px;
                     border: 1px solid #2E3A60;
-                    position: relative;
+                    padding-left:43px
 
             }
+            .email,.pass
+{
+position: relative;
+}
             
-            .email::before ,.pass::before{
+            .email::before ,            .pass::before
+                {
                 content: "";
                 background-image: url(../../../assets/img/images-admin/email.svg);
                 display: block;
-                position: absolute;
-                width: 10px;
-                height: 10px;
-                top: 0px;
-                right:0px
+    position: absolute;
+    width: 25px;
+    height: 15px;
+    left: 19px;
+    z-index: 11;
+    background-repeat: no-repeat;
+    background-size: contain;
+    top: 50%;
+    transform: translateY(-50%);
+            }
+            .pass::before{
+                background-image: url(../../../assets/img/images-admin/Password.svg);
+
             }
              
         }
@@ -44,8 +66,13 @@
             width: 100%;
             padding: 10px 2px;
             color: white;
+            margin-bottom: 33px;
         }
     }
+}
+.forget-pass{
+    font-weight: bold;
+    text-decoration: underline;
 }
 *{
     color: #2E3A60;
