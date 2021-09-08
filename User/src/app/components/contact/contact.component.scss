@@ -2,6 +2,7 @@
 @import '../../../assets/style/variables.scss';
 
 .flex{
+
     .icons{
         img{
             margin-right: 20px;
@@ -19,12 +20,19 @@
     }
 }
 
-.getintouch > div{
+.getintouch{
+
+ > div{
   width: 50%;
   padding: 0% 4%;
 }
 
-
+@media screen and (max-width:900px) {
+  flex-direction: column;
+  > div{
+    width: auto;
+  }
+}
   
   .mat-stepper-horizontal {
     margin-top: 8px;
@@ -72,6 +80,7 @@
       }
     }
   }
+}
   .contact-form {
     .mat-form-field{
 width: 100%;

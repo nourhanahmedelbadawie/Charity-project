@@ -29,3 +29,13 @@
   
     }
   }
+  .responsive-doc{
+    @media screen and (max-width:600px) {
+      .row.doc{
+      border-bottom: 4px dotted #28246b;
+      padding-bottom: 60px;
+      margin: 0px 4px 60px 4px;
+    
+    }
+  }
+  }

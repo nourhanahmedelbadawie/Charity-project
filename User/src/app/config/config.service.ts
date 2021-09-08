@@ -16,23 +16,36 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class ConfigService {
-  configUrl = 'https://jsonplaceholder.typicode.com/posts';
+  configUrl = 'http://178.62.19.101:8888/index.php/api';
 
 
   constructor(private http: HttpClient) { }
   PostDoner(hero: any): Observable<any> {
-      return this.http.post<any>(this.configUrl, hero, httpOptions)    
+      return this.http.post<any>(`${this.configUrl}/members/addDonor`, hero, httpOptions)    
     .pipe(
       catchError(this.handleError)
     );
   }
   PostVolunteer(hero: any): Observable<any> {
-    return this.http.post<any>(this.configUrl, hero, httpOptions)    
+    return this.http.post<any>(`${this.configUrl}/members/addVolunteer`, hero, httpOptions)    
   .pipe(
     catchError(this.handleError)
   );
 }
+subscribe(hero: any): Observable<any> {
+  return this.http.post<any>(`${this.configUrl}/subscribe`, hero, httpOptions)    
+.pipe(
+  catchError(this.handleError)
+);
+}
 
+
+contactUS(hero: any): Observable<any> {
+  return this.http.post<any>(`${this.configUrl}/contact/`, hero, httpOptions)    
+.pipe(
+  catchError(this.handleError)
+);
+}
   private handleError(error: HttpErrorResponse) {
     if (error.status === 0) {
       // A client-side or network error occurred. Handle it accordingly.

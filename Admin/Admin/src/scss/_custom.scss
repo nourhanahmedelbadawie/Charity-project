@@ -1,0 +1,183 @@
+// Here you can add other styles
+.app-header {
+
+    border-bottom:none
+}
+.sidebar .nav-title {
+    display: none;
+ 
+}
+.nav-item{
+    .icon-speedometer:before {
+        content: "\f2bb";
+    }
+    .icon-pencil:before{
+        content: "";
+    }
+    .icon-puzzle:before{
+        content: "";
+
+    }
+    .icon-cursor:before{
+        content: "";
+
+    }
+    .icon-pie-chart:before{
+        content: "";
+
+    }
+    .icon-star:before{
+        content: "";
+
+    }
+    .icon-bell:before{
+        content: "";
+
+    }
+    .icon-calculator:before{
+        content: "";
+
+    }
+    .icon-star:before{
+        content: "";
+
+    }
+    .icon-ban:before{
+        content: "";
+
+    }
+}
+.sidebar {
+       
+        padding-top: 30px;
+        background: #ffffff;
+.nav-link {
+ 
+    color: #28246b;
+}
+}
+.d-lg-none.navbar-toggler{
+    display: none;
+}
+//comom class
+.no-margin{
+margin: 0px !important;
+}
+.mb-60{
+    margin-bottom: 60px !important;
+}
+// dahsbord common
+h3 , h4{
+    font-family: PoppinsBold;
+}
+h3{
+    color:#28246B ;
+    margin: 40px 0px;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+h4{
+    color:#28246B ;
+    margin-bottom: 20px;
+}
+// form
+.card-main
+{
+    border-radius: 10px;
+    padding: 7%;
+    position: relative;
+    &::after{
+        border: 1px solid red;
+        content: "";
+        background-color: red;
+        display: block;
+        position: absolute;
+        top: 0px;
+    }
+}
+form{
+    >div{
+        margin-bottom: 35px !important;
+    }
+    label{
+        margin-right: 5px;
+        width: 100px;
+        color:#28246B ;
+        font-weight: bold ;
+
+    }
+    input.form-control{
+        
+        border: 2px solid #28246b !important;
+        border-radius: 21px !important;
+        padding: 9px 8px;
+        height: auto;
+
+    }
+    span.warn{
+        color:#F92B20 !important
+    }
+} 
+button ,.btn{
+    padding: 10px;
+    background-color: #7CC249;
+    border-radius: 29px;
+    border: none;
+    color: white;
+    font-weight: bold;
+    min-width: 300px;
+    &[type="submit"] + button{
+background-color: #28246b !important;    }
+}
+
+.photo ,.droparea ,.dragarea{
+    width: 100%;
+
+    width: 100%;
+    border: 2px dashed #28246B;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 138px;
+    .text{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        img{
+            width: 40px;
+        }
+       
+        span{
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: #28246B;
+
+        }
+    }
+}
+.form-group{
+    display: flex;
+}
+
+
+
+
+
+
+
+
+.dragarea {
+
+    background-color: #fff;
+    color: #bbb;
+}
+
+.droparea {
+
+  background-color: #eff;
+  color: #aaa;
+}

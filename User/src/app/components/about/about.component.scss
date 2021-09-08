@@ -2,6 +2,12 @@
 
 
 .about-first-sec {
+  @media screen and (max-width:400PX){
+    display: block !important;
+    >div{
+      width: 100% !important;
+    }
+  }
   > div {
     width: 50%;
   }
@@ -29,17 +35,29 @@
   > div {
     width: 50%;
   }
+  @media screen and (max-width:400px) {
+    display: block !important;
+    >div{
+      width: 100%;
+    }
+  }
   .icons {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 10px;
     > div {
-      padding: 20%;
+      padding: 20px;
       background-color: #f3f3f3;
       border-radius: 10px;
+      @media screen and (max-width:400) {
+        width: 100%;
+        height: 110px;
+        padding: 2px;
+      }
       &:hover {
         background-color: $pri-color;
       }
+    
       .img {
         width: 100%;
         height: 100%;

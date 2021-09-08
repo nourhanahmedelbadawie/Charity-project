@@ -22,7 +22,34 @@ footer {
   * {
     color: white;
   }
+@media screen and (max-width:900px) {
+  .row > .d-flex{
+    flex-direction: column;
+    .footer-text ,.links{
+      width: 100%;
+    }
+ 
+  .social-icons{
+    flex-direction: row !important;
+    width: 100%;
 
+  }
+}
+
+.letter{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+
+  }
+  .subscribe{
+    margin: 0px;
+    div.field button{
+      position: unset;
+    }
+  }
+}
 
 }
 .social-icons {
@@ -157,7 +184,7 @@ footer {
       position: relative;
       button {
         position: absolute;
-        right: -31%;
+        right: -13%;
         top: 4%;
         padding: 15px 56px;
         padding-bottom: 16px;

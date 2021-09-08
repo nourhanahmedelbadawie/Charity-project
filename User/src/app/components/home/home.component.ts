@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormControl, FormGroup} from '@angular/forms';
 import {ConfigService  } from "../../config/config.service";
 import { Validators } from '@angular/forms';
+import Swal from 'sweetalert2'
+
 
 
 @Component({
@@ -53,21 +55,62 @@ makeVolunteerForm =  this.fb.group({
 sendDonar(){
   
     console.log(this.makeDonationForm.valid)
-    this.configService.PostDoner( JSON.stringify({   title: 'foo',
-    body: 'bar',
-    userId: 1}))
-      .subscribe((data: any) => console.log(data));
+    this.configService.PostDoner( JSON.stringify(this.makeDonationForm.value))
+
+      .subscribe((data: any) =>{
+        this.makeDonationForm.reset()
+
+        Swal.fire({
+          title: 'success',
+          text: 'Send successfuly',
+          icon: 'success',
+          confirmButtonText: 'Ok'
+        })
+
+      }  ,(err)=>{
+        this.makeDonationForm.reset()
+
+        Swal.fire({
+          title: 'Error',
+          text: 'Something went wrong ',
+          icon: 'error',
+          confirmButtonText: 'Ok'
+        })
+        
+  
+      })
+      
+      
   
 }
 
 sendVolunteer(){
   
-  console.log(this.makeVolunteerForm.valid)
-  this.configService.PostVolunteer( JSON.stringify({   title: 'foo',
-  body: 'bar',
-  userId: 1}))
-    .subscribe((data: any) => console.log(data));
+  console.log(this.makeVolunteerForm.value)
+  this.configService.PostVolunteer(JSON.stringify(this.makeVolunteerForm.value))
+    .subscribe((data: any) =>{
+      this.makeVolunteerForm.reset()
+      console.log(data)
+          Swal.fire({
+          title: 'success',
+          text: 'Send successfuly',
+          icon: 'success',
+          confirmButtonText: 'Ok'
+        })
+    } 
+    ,(err)=>{
+      this.makeVolunteerForm.reset()
+      console.log(err)
+      Swal.fire({
+        title: 'Error',
+        text: 'Something went wrong ',
+        icon: 'error',
+        confirmButtonText: 'Ok'
+      })
+
+    });
 
 }
+
 
 }

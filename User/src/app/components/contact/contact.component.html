@@ -55,9 +55,11 @@
               <mat-label>Email</mat-label>
 
               <input
-                formControlName="name"
+                formControlName="email"
                 matInput=""
                 placeholder="Email"
+                pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}"
+
                 type="email"
                 required
               />
@@ -66,21 +68,21 @@
               <mat-label>Phone Number</mat-label>
 
               <input
-                formControlName="number"
+                formControlName="phone"
                 matInput=""
                 placeholder="Phone Number"
                 type="text"
                 required
+                minlength="10"
               />
             </mat-form-field>
+     
             <mat-form-field appearance="outline">
               <mat-label>Subject</mat-label>
 
               <input
-                formControlName="email"
+                formControlName="subject"
                 matInput=""
-                pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}"
-                type="email"
                 required
                 placeholder="Subject"
               />
@@ -89,14 +91,14 @@
               <mat-label>Message</mat-label>
 
               <textarea
-                formControlName="msg"
+                formControlName="body"
                 matInput=""
                 required
                 placeholder="Message"
               ></textarea>
             </mat-form-field>
 
-            <button type="submit" [disabled]="!contactForm.valid">
+            <button type="submit" >
               Submit
             </button>
           </form>

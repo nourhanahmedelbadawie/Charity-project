@@ -38,7 +38,11 @@
       text-transform: capitalize;
     }
   }
+  
   .grid_logos {
+    &.mob{
+      display: none;
+    }
     display: flex;
     align-items: center;
     justify-content: center;
@@ -65,6 +69,21 @@
     justify-content: center;
     height: 75px;
         img {
+          width: 100px;
+        }
+      }
+    }
+  }
+  @media screen and (max-width:900px) {
+    .grid_logos{
+      display: none;
+    }
+    .grid_logos.mob{
+      display: block;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      figure{
+        img{
           width: 100px;
         }
       }

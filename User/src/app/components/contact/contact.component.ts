@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatFormFieldControl } from '@angular/material';
+import { ConfigService } from 'src/app/config/config.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-contact',
@@ -14,24 +16,49 @@ export class ContactComponent implements OnInit {
     bg:"../../../assets/images/about/about_manner.jpg",
     link:"/contact"
   }
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder ,private configService:ConfigService ) {}
 
   ngOnInit() {
   }
 
   
   contactForm = this.fb.group({
-    name: [''],
-    email: [''],
-    number: [''],
-    subject: [''],
-    msg: ['']
+    name: ['', Validators.required],
+    email:  ['',[Validators.required, Validators.email]],
+    phone: ['' , Validators.required],
+    subject: ['' , Validators.required],
+    body: ['' , Validators.required]
+
 
   });
 
-
+ 
   sendcontactForm(){
-    console.log(this.contactForm)
+    console.log(this.contactForm.value)
+    this.configService.contactUS( JSON.stringify(this.contactForm.value))
+    .subscribe((data: any) =>()=>{
+      this.contactForm .reset()
+
+      console.log(data)
+      Swal.fire({
+        title: 'success',
+        text: 'Send successfuly',
+        icon: 'success',
+        confirmButtonText: 'Ok'
+      })
+
+    }  ,(err)=>{
+      this.contactForm.reset()
+      console.log(err)
+      Swal.fire({
+        title: 'Error',
+        text: 'Something went wrong ',
+        icon: 'error',
+        confirmButtonText: 'Ok'
+      })
+      
+
+    })
   }
 
 }
