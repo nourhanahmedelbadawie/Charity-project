@@ -1,4 +1,4 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, HostListener, Inject, OnInit } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import { getStyle, rgbToHex } from '@coreui/coreui/dist/js/coreui-utilities';
 
@@ -6,29 +6,49 @@ import { getStyle, rgbToHex } from '@coreui/coreui/dist/js/coreui-utilities';
   templateUrl: 'colors.component.html'
 })
 export class ColorsComponent implements OnInit {
-  constructor(@Inject(DOCUMENT) private _document: any) {}
-
-  public themeColors(): void {
-    Array.from(this._document.querySelectorAll('.theme-color')).forEach((el: HTMLElement) => {
-      const background = getStyle('background-color', el);
-      const table = this._document.createElement('table');
-      table.innerHTML = `
-        <table class="w-100">
-          <tr>
-            <td class="text-muted">HEX:</td>
-            <td class="font-weight-bold">${rgbToHex(background)}</td>
-          </tr>
-          <tr>
-            <td class="text-muted">RGB:</td>
-            <td class="font-weight-bold">${background}</td>
-          </tr>
-        </table>
-      `;
-      el.parentNode.appendChild(table);
-    });
+  error: string;
+  dragAreaClass: string;
+  onFileChange(event: any) {
+    let files: FileList = event.target.files;
+    this.saveFiles(files);
+  }
+  ngOnInit() {
+    this.dragAreaClass = "dragarea";
+  }
+  @HostListener("dragover", ["$event"]) onDragOver(event: any) {
+    this.dragAreaClass = "droparea";
+    event.preventDefault();
+  }
+  @HostListener("dragenter", ["$event"]) onDragEnter(event: any) {
+    this.dragAreaClass = "droparea";
+    event.preventDefault();
+  }
+  @HostListener("dragend", ["$event"]) onDragEnd(event: any) {
+    this.dragAreaClass = "dragarea";
+    event.preventDefault();
+  }
+  @HostListener("dragleave", ["$event"]) onDragLeave(event: any) {
+    this.dragAreaClass = "dragarea";
+    event.preventDefault();
+  }
+  @HostListener("drop", ["$event"]) onDrop(event: any) {
+    this.dragAreaClass = "dragarea";
+    event.preventDefault();
+    event.stopPropagation();
+    if (event.dataTransfer.files) {
+      let files: FileList = event.dataTransfer.files;
+      this.saveFiles(files);
+    }
   }
 
-  ngOnInit(): void {
-    this.themeColors();
+  saveFiles(files: FileList) {
+
+    if (files.length > 1) this.error = "Only one file at time allow";
+    else {
+      this.error = "";
+      console.log(files[0].size,files[0].name,files[0].type);
+    }
   }
+
+  
 }

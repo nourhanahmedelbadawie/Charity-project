@@ -14,10 +14,10 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        redirectTo: 'buttons'
+        redirectTo: 'achievements'
       },
       {
-        path: 'buttons',
+        path: 'achievements',
         component: ButtonsComponent,
         data: {
           title: 'Buttons'

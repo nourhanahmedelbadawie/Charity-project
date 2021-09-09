@@ -23,10 +23,10 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        redirectTo: 'cards'
+        redirectTo: 'doc'
       },
       {
-        path: 'cards',
+        path: 'doc',
         component: CardsComponent,
         data: {
           title: 'Cards'

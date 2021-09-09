@@ -1,141 +1,101 @@
 <div class="animated fadeIn">
-  <div class="card">
-    <div class="card-header">
-      <i class="icon-drop"></i> Theme colors
-    </div>
+  <h3>Documents</h3>
+  <div class="card card-main">
+
     <div class="card-body">
-      <div class="row">
-        <div class="col-xl-2 col-md-3 col-sm-4 col-6 mb-4">
-          <div class="bg-primary theme-color w-75 rounded mb-2" style="padding-top:75%"></div>
-          <h6>Brand Primary Color</h6>
-        </div>
-        <div class="col-xl-2 col-md-3 col-sm-4 col-6 mb-4">
-          <div class="bg-secondary theme-color w-75 rounded mb-2" style="padding-top:75%"></div>
-          <h6>Brand Secondary Color</h6>
-        </div>
-        <div class="col-xl-2 col-md-3 col-sm-4 col-6 mb-4">
-          <div class="bg-success theme-color w-75 rounded mb-2" style="padding-top:75%"></div>
-          <h6>Brand Success Color</h6>
-        </div>
-        <div class="col-xl-2 col-md-3 col-sm-4 col-6 mb-4">
-          <div class="bg-danger theme-color w-75 rounded mb-2" style="padding-top:75%"></div>
-          <h6>Brand Danger Color</h6>
-        </div>
-        <div class="col-xl-2 col-md-3 col-sm-4 col-6 mb-4">
-          <div class="bg-warning theme-color w-75 rounded mb-2" style="padding-top:75%"></div>
-          <h6>Brand Warning Color</h6>
-        </div>
-        <div class="col-xl-2 col-md-3 col-sm-4 col-6 mb-4">
-          <div class="bg-info theme-color w-75 rounded mb-2" style="padding-top:75%"></div>
-          <h6>Brand Info Color</h6>
-        </div>
-        <div class="col-xl-2 col-md-3 col-sm-4 col-6 mb-4">
-          <div class="bg-light theme-color w-75 rounded mb-2" style="padding-top:75%"></div>
-          <h6>Brand Light Color</h6>
-        </div>
-        <div class="col-xl-2 col-md-3 col-sm-4 col-6 mb-4">
-          <div class="bg-dark theme-color w-75 rounded mb-2" style="padding-top:75%"></div>
-          <h6>Brand Dark Color</h6>
-        </div>
-      </div>
-    </div>
+      <h4>Cover Photo</h4>
+
+      <form>
+        <div draggable="true" ngClass="{{dragAreaClass}}">
+          <div class="row">
+              <div class="col-md-12 text-center text ">                                                       
+                <span><img src="../../../assets/img/images-admin/home/upload.svg" /></span>
+                <span>Drag and drop Photo here</span>
+                                <a href="javascript:void(0)" class="btn" (click)="file.click()">
+                                  Browse Photo                </a>
+  
+                  <input type="file"
+                         #file
+                         [multiple]="false"
+                         (change)="onFileChange($event)"
+                         style="display:none" />
+              <div class="dragged-files-wrapper" *ngIf="draggedFiles">
+                <div class="file" *ngFor="let file of draggedFiles">
+                  {{file}}
+                </div>
+              </div>
+              </div>
+              </div>
   </div>
-  <div class="card">
-    <div class="card-header">
-      <i class="icon-drop"></i> Grays
-    </div>
-    <div class="card-body">
-      <div class="row mb-3">
-        <div class="col-xl-2 col-md-3 col-sm-4 col-6 mb-4">
-          <div class="bg-gray-100 theme-color w-75 rounded mb-2" style="padding-top:75%"></div>
-          <h6>Gray 100 Color</h6>
+        <tr *ngFor="let item of files; let i=index">
+          <td><strong>{{ item.relativePath }}</strong></td>
+        </tr>
+
+
+        <h4>Documents Intro</h4>
+
+        <div class="form-group">
+          <label for="exampleInputEmail1">Title</label>
+          <input   class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+            placeholder="Write the title">
         </div>
-        <div class="col-xl-2 col-md-3 col-sm-4 col-6 mb-4">
-          <div class="bg-gray-200 theme-color w-75 rounded mb-2" style="padding-top:75%"></div>
-          <h6>Gray 200 Color</h6>
+        <div class="form-group mb-60">
+          <label for="exampleInputEmail1">Intro</label>
+          <input   class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+            placeholder="Write the Subtitle">
         </div>
-        <div class="col-xl-2 col-md-3 col-sm-4 col-6 mb-4">
-          <div class="bg-gray-300 theme-color w-75 rounded mb-2" style="padding-top:75%"></div>
-          <h6>Gray 300 Color</h6>
+
+
+   
+
+        <div class="photo">
+          <div class="text ">
+            <span><img src="../../../assets/img/images-admin/home/upload.svg" /></span>
+            <span class="no-margin">You can drag and drop files here to add them.</span>
+            <button class="main-btn">
+              Browse Photo
+            </button>
+          </div>
         </div>
-        <div class="col-xl-2 col-md-3 col-sm-4 col-6 mb-4">
-          <div class="bg-gray-400 theme-color w-75 rounded mb-2" style="padding-top:75%"></div>
-          <h6>Gray 400 Color</h6>
-        </div>
-        <div class="col-xl-2 col-md-3 col-sm-4 col-6 mb-4">
-          <div class="bg-gray-500 theme-color w-75 rounded mb-2" style="padding-top:75%"></div>
-          <h6>Gray 500 Color</h6>
-        </div>
-        <div class="col-xl-2 col-md-3 col-sm-4 col-6 mb-4">
-          <div class="bg-gray-600 theme-color w-75 rounded mb-2" style="padding-top:75%"></div>
-          <h6>Gray 600 Color</h6>
-        </div>
-        <div class="col-xl-2 col-md-3 col-sm-4 col-6 mb-4">
-          <div class="bg-gray-700 theme-color w-75 rounded mb-2" style="padding-top:75%"></div>
-          <h6>Gray 700 Color</h6>
-        </div>
-        <div class="col-xl-2 col-md-3 col-sm-4 col-6 mb-4">
-          <div class="bg-gray-800 theme-color w-75 rounded mb-2" style="padding-top:75%"></div>
-          <h6>Gray 800 Color</h6>
-        </div>
-        <div class="col-xl-2 col-md-3 col-sm-4 col-6 mb-4">
-          <div class="bg-gray-900 theme-color w-75 rounded mb-2" style="padding-top:75%"></div>
-          <h6>Gray 900 Color</h6>
-        </div>
-      </div>
-    </div>
+
+       
+
+<div class="d-flex">
+  <h4>Documents Section</h4>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Title</label>
+    <input   class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+      placeholder="Write the title">
   </div>
-  <div class="card">
-    <div class="card-header">
-      <i class="icon-drop"></i> Additional colors
-    </div>
-    <div class="card-body">
-      <div class="row">
-        <div class="col-xl-2 col-md-3 col-sm-4 col-6 mb-4">
-          <div class="bg-blue theme-color mb-3 w-75 rounded mb-2" style="padding-top:75%"></div>
-          <h6>Blue Color</h6>
+  <div class="form-group mb-60">
+    <label for="exampleInputEmail1">Intro</label>
+    <input   class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+      placeholder="Write the Subtitle">
+  </div>
+  <div class="form-group mb-60">
+    <label for="exampleInputEmail1">PDF File</label>
+    <input   class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+      placeholder="Write the Subtitle">
+  </div>
+<button class="main-btn">Add New</button>
+</div>   
+
+        <div class="photo">
+          <div class="text ">
+            <span><img src="../../../assets/img/images-admin/home/upload.svg" /></span>
+            <span class="no-margin">You can drag and drop files here to add them.</span>
+            <button class="main-btn">
+              Browse Photo
+            </button>
+          </div>
         </div>
-        <div class="col-xl-2 col-md-3 col-sm-4 col-6 mb-4">
-          <div class="bg-light-blue theme-color mb-3 w-75 rounded mb-2" style="padding-top:75%"></div>
-          <h6>Light Blue Color</h6>
+
+        <div class="d-flex justify-content-between">
+          <button class="main-btn" type="submit">Save</button>
+          <button class="main-btn" type="button">Cancel</button>
+
         </div>
-        <div class="col-xl-2 col-md-3 col-sm-4 col-6 mb-4">
-          <div class="bg-indigo theme-color mb-3 w-75 rounded mb-2" style="padding-top:75%"></div>
-          <h6>Indigo Color</h6>
-        </div>
-        <div class="col-xl-2 col-md-3 col-sm-4 col-6 mb-4">
-          <div class="bg-purple theme-color mb-3 w-75 rounded mb-2" style="padding-top:75%"></div>
-          <h6>Purple Color</h6>
-        </div>
-        <div class="col-xl-2 col-md-3 col-sm-4 col-6 mb-4">
-          <div class="bg-pink theme-color mb-3 w-75 rounded mb-2" style="padding-top:75%"></div>
-          <h6>Pink Color</h6>
-        </div>
-        <div class="col-xl-2 col-md-3 col-sm-4 col-6 mb-4">
-          <div class="bg-red theme-color mb-3 w-75 rounded mb-2" style="padding-top:75%"></div>
-          <h6>Red Color</h6>
-        </div>
-        <div class="col-xl-2 col-md-3 col-sm-4 col-6 mb-4">
-          <div class="bg-orange theme-color mb-3 w-75 rounded mb-2" style="padding-top:75%"></div>
-          <h6>Orange Color</h6>
-        </div>
-        <div class="col-xl-2 col-md-3 col-sm-4 col-6 mb-4">
-          <div class="bg-yellow theme-color mb-3 w-75 rounded mb-2" style="padding-top:75%"></div>
-          <h6>Yellow Color</h6>
-        </div>
-        <div class="col-xl-2 col-md-3 col-sm-4 col-6 mb-4">
-          <div class="bg-green theme-color mb-3 w-75 rounded mb-2" style="padding-top:75%"></div>
-          <h6>Green Color</h6>
-        </div>
-        <div class="col-xl-2 col-md-3 col-sm-4 col-6 mb-4">
-          <div class="bg-teal theme-color mb-3 w-75 rounded mb-2" style="padding-top:75%"></div>
-          <h6>Teal Color</h6>
-        </div>
-        <div class="col-xl-2 col-md-3 col-sm-4 col-6 mb-4">
-          <div class="bg-cyan theme-color mb-3 w-75 rounded mb-2" style="padding-top:75%"></div>
-          <h6>Cyan Color</h6>
-        </div>
-      </div>
+      </form>
     </div>
   </div>
 </div>

@@ -1,4 +1,5 @@
 // Here you can add other styles
+// outline view
 .app-header {
 
     border-bottom:none
@@ -59,12 +60,18 @@
 .d-lg-none.navbar-toggler{
     display: none;
 }
+
 //comom class
 .no-margin{
 margin: 0px !important;
 }
 .mb-60{
     margin-bottom: 60px !important;
+}
+
+.sidebar .nav-link.active{
+    color: #7CC249;
+    background-color:white
 }
 // dahsbord common
 h3 , h4{
@@ -118,7 +125,7 @@ form{
         color:#F92B20 !important
     }
 } 
-button ,.btn{
+.main-btn{
     padding: 10px;
     background-color: #7CC249;
     border-radius: 29px;

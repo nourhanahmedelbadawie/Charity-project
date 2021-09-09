@@ -22,21 +22,17 @@ export const navItems: INavData[] = [
   },
   {
     name: 'Documents',
-    url: '/base',
+    url: '/admin/doc',
     icon: 'icon-puzzle',
    
   },
   {
     name: 'Achievements',
-    url: '/buttons',
+    url: '/achievements',
     icon: 'icon-cursor',
   
   },
-  {
-    name: 'Documents',
-    url: '/charts',
-    icon: 'icon-pie-chart'
-  },
+ 
   {
     name: 'Partners',
     url: '/icons',
