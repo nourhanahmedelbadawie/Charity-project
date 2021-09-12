@@ -8,18 +8,32 @@ class="logo-dashboard"
   [asideMenuToggler]="'lg'">
 
   <ul class="nav navbar-nav ml-auto">
+    <li class="search-nav">
+      <div class="d-flex justify-content-center px-5">
+        <div class="search">
+          <a href="#" class="search-icon"> 
+            <i class="fa fa-search"></i> 
+           </a> 
+           <input type="text" class="search-input" placeholder="Search..." name="">
+          
+            </div>
+      </div>
+    </li>
     <li class="nav-item d-md-down-none">
-      <a class="nav-link" href="#"><i class="icon-bell"></i><span class="badge badge-pill badge-danger">5</span></a>
+      <a class="nav-link" href="#"><img src="assets/img/images-admin/bell.svg" /><span class="badge badge-pill badge-danger">5</span></a>
     </li>
   
     <li class="nav-item dropdown" dropdown placement="bottom right">
       <a class="nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" dropdownToggle (click)="false">
-        <img src="assets/img/avatars/6.jpg" class="img-avatar" alt="admin@bootstrapmaster.com"/>
+        <img src="assets/img/images-admin/admin_img.png" class="img-avatar" alt="admin@bootstrapmaster.com"/>
       </a>
      
     </li>
   </ul>
 </app-header>
+
+
+
 <div class="app-body">
   <app-sidebar #appSidebar [fixed]="true" [display]="'lg'" [minimized]="sidebarMinimized" (minimizedChange)="toggleMinimize($event)">
     <app-sidebar-nav [navItems]="navItems" [perfectScrollbar] [disabled]="appSidebar.minimized"></app-sidebar-nav>

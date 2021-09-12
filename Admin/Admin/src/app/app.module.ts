@@ -28,6 +28,8 @@ import { RegisterComponent } from './views/register/register.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AngularEditorModule } from '@kolkov/angular-editor';
 
+
+
 const APP_CONTAINERS = [
   DefaultLayoutComponent
 ];
@@ -72,6 +74,7 @@ import { DropImageDirective } from './directives/drop-image.directive';
     HttpClientModule,
     AngularEditorModule ,
 FormsModule
+
   ],
   declarations: [
     AppComponent,

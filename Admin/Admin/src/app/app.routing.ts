@@ -51,7 +51,7 @@ export const routes: Routes = [
         loadChildren: () => import('./views/base/base.module').then(m => m.BaseModule)
       },
       {
-        path: 'buttons',
+        path: 'admin',
         loadChildren: () => import('./views/buttons/buttons.module').then(m => m.ButtonsModule)
       },
       {
@@ -63,7 +63,7 @@ export const routes: Routes = [
         loadChildren: () => import('./views/dashboard/dashboard.module').then(m => m.DashboardModule)
       },
       {
-        path: 'icons',
+        path: 'admin',
         loadChildren: () => import('./views/icons/icons.module').then(m => m.IconsModule)
       },
       {

@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { ButtonsComponent } from './buttons.component';
 import { DropdownsComponent } from './dropdowns.component';
 import { BrandButtonsComponent } from './brand-buttons.component';
+import { SingleAchievmentComponent } from './single-achievment/single-achievment.component';
 
 const routes: Routes = [
   {
@@ -19,6 +20,13 @@ const routes: Routes = [
       {
         path: 'achievements',
         component: ButtonsComponent,
+        data: {
+          title: 'Buttons'
+        }
+      },
+      {
+        path: 'new-achievement',
+        component:SingleAchievmentComponent ,
         data: {
           title: 'Buttons'
         }

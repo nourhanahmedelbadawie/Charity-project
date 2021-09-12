@@ -17,7 +17,8 @@ export class HomeComponent implements OnInit {
     currentbreadcrumb:{}={
     title:"Change child's life",
     subtitle:"Organisation is set up to provide help and save money Organisation is set up to provide help and save money",
-    bg:"../../../assets/images/about/about_manner.jpg",
+    bg:"../../../assets/images/Home/banner/banner.png" 
+    ,
     link:"",
     home:true
   }

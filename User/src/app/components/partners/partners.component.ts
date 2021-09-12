@@ -12,7 +12,7 @@ export class PartnersComponent implements OnInit {
   currentbreadcrumb: {} = {
     title: "Partners",
     subtitle: "Partners",
-    bg: "../../../assets/images/about/about_manner.jpg",
+    bg: "../../../assets/images/Home/banner/banner.png",
     link: "/partners",
   };
 }

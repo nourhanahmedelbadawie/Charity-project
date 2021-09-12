@@ -28,14 +28,14 @@ export const navItems: INavData[] = [
   },
   {
     name: 'Achievements',
-    url: '/achievements',
+    url: '/admin/achievements',
     icon: 'icon-cursor',
   
   },
  
   {
     name: 'Partners',
-    url: '/icons',
+    url: '/admin/partners',
     icon: 'icon-star',
    
   },

@@ -3,15 +3,21 @@
   <div class="card card-main">
 
     <div class="card-body">
+
+
       <h4>Cover Photo</h4>
 
       <form>
+
+        <section class="sec">
+
+     
         <div draggable="true" ngClass="{{dragAreaClass}}">
           <div class="row">
               <div class="col-md-12 text-center text ">                                                       
                 <span><img src="../../../assets/img/images-admin/home/upload.svg" /></span>
                 <span>Drag and drop Photo here</span>
-                                <a href="javascript:void(0)" class="btn" (click)="file.click()">
+                                <a href="javascript:void(0)" class="main-btn" (click)="file.click()">
                                   Browse Photo                </a>
   
                   <input type="file"
@@ -30,6 +36,9 @@
         <tr *ngFor="let item of files; let i=index">
           <td><strong>{{ item.relativePath }}</strong></td>
         </tr>
+      </section>
+<section>
+
 
 
         <h4>Documents Intro</h4>
@@ -39,19 +48,21 @@
           <input   class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
             placeholder="Write the title">
         </div>
-        <div class="form-group mb-60">
+        <div class="form-group ">
           <label for="exampleInputEmail1">Intro</label>
-          <input   class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-            placeholder="Write the Subtitle">
+          <textarea   class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+            placeholder="Write the Subtitle"></textarea>
         </div>
 
 
    
 
-        <div class="photo">
+        <div class="photo form-group">
+          <label for="exampleInputEmail1">Image</label>
+
           <div class="text ">
-            <span><img src="../../../assets/img/images-admin/home/upload.svg" /></span>
-            <span class="no-margin">You can drag and drop files here to add them.</span>
+         
+            <span ><img src="../../../assets/img/images-admin/home/upload.svg" class="ml-1" /> You can drag and drop files here to add them.</span>
             <button class="main-btn">
               Browse Photo
             </button>
@@ -59,38 +70,53 @@
         </div>
 
        
+      </section>
+      <section class="sec">
 
-<div class="d-flex">
-  <h4>Documents Section</h4>
+  <div class="d-flex justify-content-between mb-4">
+    <h4>Documents Section</h4>
+<button class="main-btn">
+  Add Neww
+</button>
+  </div>
   <div class="form-group">
     <label for="exampleInputEmail1">Title</label>
     <input   class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
       placeholder="Write the title">
   </div>
-  <div class="form-group mb-60">
+  <div class="form-group ">
     <label for="exampleInputEmail1">Intro</label>
-    <input   class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-      placeholder="Write the Subtitle">
+    <textarea   class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+      placeholder="Write the Subtitle"></textarea>
   </div>
-  <div class="form-group mb-60">
+  
+
+  <div class="photo form-group">
+    <label for="exampleInputEmail1">Image</label>
+
+    <div class="text ">
+   
+      <span ><img src="../../../assets/img/images-admin/home/upload.svg" class="ml-1" /> You can drag and drop files here to add them.</span>
+      <button class="main-btn">
+        Browse Photo
+      </button>
+    </div>
+  </div>
+  <div class="form-group ">
     <label for="exampleInputEmail1">PDF File</label>
-    <input   class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+    <div class="upload">
+      <input   class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
       placeholder="Write the Subtitle">
+
+      <button class="main-btn">Upload File</button>
+
+ 
   </div>
-<button class="main-btn">Add New</button>
 </div>   
 
-        <div class="photo">
-          <div class="text ">
-            <span><img src="../../../assets/img/images-admin/home/upload.svg" /></span>
-            <span class="no-margin">You can drag and drop files here to add them.</span>
-            <button class="main-btn">
-              Browse Photo
-            </button>
-          </div>
-        </div>
+</section>
 
-        <div class="d-flex justify-content-between">
+        <div class="d-flex justify-content-between btns">
           <button class="main-btn" type="submit">Save</button>
           <button class="main-btn" type="button">Cancel</button>
 

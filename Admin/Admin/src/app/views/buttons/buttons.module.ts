@@ -11,6 +11,7 @@ import { DropdownsComponent } from './dropdowns.component';
 
 // Buttons Routing
 import { ButtonsRoutingModule } from './buttons-routing.module';
+import { SingleAchievmentComponent } from './single-achievment/single-achievment.component';
 
 // Angular
 
@@ -24,7 +25,8 @@ import { ButtonsRoutingModule } from './buttons-routing.module';
   declarations: [
     ButtonsComponent,
     DropdownsComponent,
-    BrandButtonsComponent
+    BrandButtonsComponent,
+    SingleAchievmentComponent
   ]
 })
 export class ButtonsModule { }

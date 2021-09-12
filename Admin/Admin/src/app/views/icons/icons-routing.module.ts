@@ -18,7 +18,7 @@ const routes: Routes = [
         redirectTo: 'coreui-icons'
       },
       {
-        path: 'coreui-icons',
+        path: 'partners',
         component: CoreUIIconsComponent,
         data: {
           title: 'CoreUI Icons'

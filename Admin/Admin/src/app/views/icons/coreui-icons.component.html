@@ -1,28 +1,126 @@
 <div class="animated fadeIn">
-  <div class="card card-default">
-    <div class="card-header">
-      <i class="fa fa-picture-o"></i> CoreUI Icons <span class="badge badge-info">New</span>
-      <div class="card-header-actions">
-        <a
-          href="https://icons.coreui.io/"
-          rel="noopener"
-          target="_blank"
-          class="card-header-action"
-        >
-          <small class="text-muted">download</small>
-        </a>
-      </div>
-    </div>
+  <h3>Partners</h3>
+  <div class="card card-main">
+
     <div class="card-body">
-      <div class="row text-center">
-        <div class="mb-5 col col-6 col-sm-4 col-md-3 col-xl-2" *ngFor="let icon of icons">
-          <i class="{{toKebabCase(icon[0])}} c-icon c-icon-3xl" *ngIf="platform.TRIDENT; else notIE"></i>
-          <ng-template #notIE>
-            <c-icon [name]="toKebabCase(icon[0])" size="3xl" [title]="icon[0]" class="c-icon-fix"></c-icon>
-          </ng-template>
-          <div>{{ toKebabCase(icon[0]) }}</div>
+      <h4>Cover Photo</h4>
+
+      <form>
+        <div draggable="true" ngClass="{{dragAreaClass}}">
+          <div class="row">
+              <div class="col-md-12 text-center text ">                                                       
+                <span><img src="../../../assets/img/images-admin/home/upload.svg" class="mr-1" /> Drag and drop Photo here</span>
+                                <a href="javascript:void(0)" class="main-btn" (click)="file.click()">
+                                  Browse Photo                </a>
+  
+                  <input type="file"
+                         #file
+                         [multiple]="false"
+                         (change)="onFileChange($event)"
+                         style="display:none" />
+              <div class="dragged-files-wrapper" *ngIf="draggedFiles">
+                <div class="file" *ngFor="let file of draggedFiles">
+                  {{file}}
+                </div>
+              </div>
+              </div>
+              </div>
+  </div>
+        <tr *ngFor="let item of files; let i=index">
+          <td><strong>{{ item.relativePath }}</strong></td>
+        </tr>
+
+
+        <h4>Documents Intro</h4>
+
+        <div class="form-group">
+          <label for="exampleInputEmail1">Title</label>
+          <input   class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+            placeholder="Write the title">
         </div>
-      </div>
+        <div class="form-group ">
+          <label for="exampleInputEmail1">Intro</label>
+          <input   class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+            placeholder="Write the Subtitle">
+        </div>
+
+
+   
+
+        <div class="photo">
+          <div class="text ">
+            <span><img src="../../../assets/img/images-admin/home/upload.svg" /></span>
+            <span class="no-margin">You can drag and drop files here to add them.</span>
+            <button class="main-btn">
+              Browse Photo
+            </button>
+          </div>
+        </div>
+
+       
+
+<div >
+  <h4>Partners Intro</h4>
+  <div class="form-group mb-60">
+    <label for="exampleInputEmail1">Title</label>
+    <input   class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+      placeholder="Write the title">
+  </div>
+  <div class="form-group mb-60">
+    <label for="exampleInputEmail1">Intro</label>
+    <input   class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+      placeholder="Write the Subtitle">
+  </div>
+  <div class="form-group mb-60">
+    <label for="exampleInputEmail1">PDF File</label>
+    <input   class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+      placeholder="Write the Subtitle">
+  </div>
+<button class="main-btn">Add New</button>
+</div>   
+
+        <div class="photo">
+          <div class="text ">
+            <span><img src="../../../assets/img/images-admin/home/upload.svg" /></span>
+            <span class="no-margin">You can drag and drop files here to add them.</span>
+            <button class="main-btn">
+              Browse Photo
+            </button>
+          </div>
+        </div>
+
+        <h4>Our Partners</h4>
+    
+        <div class="form-group mb-60">
+          <label for="exampleInputEmail1">Intro</label>
+          <input   class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+            placeholder="Write the Subtitle">
+        </div>
+        <h4>Our Partners</h4>
+        <div class="form-group mb-60">
+          <label for="exampleInputEmail1">Company 1</label>
+          
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-offset-2 col-sm-8"><br><br>
+          <div class="form-group">
+          <div class="input-group">
+            <input type="text" class="form-control" readonly>
+          <div class="input-group-btn">
+            <span class="fileUpload btn btn-success">
+                <span class="upl" id="upload">Upload single file</span>
+                <input type="file" class="upload up" id="up" onchange="readURL(this);" />
+              </span>
+           </div>
+           </div>
+        </div>
+
+        <div class="d-flex justify-content-between">
+          <button class="main-btn" type="submit">Save</button>
+          <button class="main-btn" type="button">Cancel</button>
+
+        </div>
+      </form>
     </div>
   </div>
 </div>
