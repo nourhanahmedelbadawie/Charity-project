@@ -60,13 +60,13 @@ export const navItems: INavData[] = [
   },
   {
     name: 'About us',
-    url: '/pages',
+    url: '/admin/about',
     icon: 'icon-star',
    
   },
   {
     name: 'setting',
-    url: '/dashboard',
+    url: '/admin/setting',
     icon: 'icon-ban',
  
   }

@@ -1,3 +1,4 @@
+import { AboutComponent } from './views/theme/about/about.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
@@ -32,6 +33,7 @@ export const routes: Routes = [
       title: 'Login Page'
     }
   },
+ 
   {
     path: 'register',
     component: RegisterComponent,

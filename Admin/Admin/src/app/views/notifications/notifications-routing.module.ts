@@ -14,10 +14,10 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        redirectTo: 'alerts'
+        redirectTo: 'donation'
       },
       {
-        path: 'alerts',
+        path: 'donation',
         component: AlertsComponent,
         data: {
           title: 'Alerts'

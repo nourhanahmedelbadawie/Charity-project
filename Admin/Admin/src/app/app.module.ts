@@ -11,6 +11,7 @@ import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 import { IconModule, IconSetModule, IconSetService } from '@coreui/icons-angular';
 import { NgxFileDropModule } from 'ngx-file-drop';
 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
@@ -23,7 +24,7 @@ import { DefaultLayoutComponent } from './containers';
 
 import { P404Component } from './views/error/404.component';
 import { P500Component } from './views/error/500.component';
-import { LoginComponent } from './views/login/login.component';
+import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './views/register/register.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AngularEditorModule } from '@kolkov/angular-editor';
@@ -49,8 +50,9 @@ import { AppRoutingModule } from './app.routing';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { ChartsModule } from 'ng2-charts';
-import { FormsModule } from '@angular/forms';
 import { DropImageDirective } from './directives/drop-image.directive';
+import { AboutComponent } from './views/theme/about/about.component';
+import { SettingComponent } from './views/theme/setting/setting.component';
 
 @NgModule({
  schemas: [ CUSTOM_ELEMENTS_SCHEMA ]  , 
@@ -73,7 +75,8 @@ import { DropImageDirective } from './directives/drop-image.directive';
     NgxFileDropModule ,
     HttpClientModule,
     AngularEditorModule ,
-FormsModule
+FormsModule ,
+ReactiveFormsModule
 
   ],
   declarations: [
@@ -83,7 +86,9 @@ FormsModule
     P500Component,
     LoginComponent,
     RegisterComponent,
-    DropImageDirective
+    DropImageDirective,
+    AboutComponent,
+    SettingComponent
   ],
   providers: [
     {

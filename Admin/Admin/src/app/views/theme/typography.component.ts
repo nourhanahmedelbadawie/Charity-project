@@ -1,14 +1,16 @@
 import { Component, OnInit, HostListener } from "@angular/core";
 import { AngularEditorConfig } from '@kolkov/angular-editor';
+import { Tobase4Service } from "../../common/tobase4.service";
 
 @Component({
   templateUrl: 'typography.component.html'
 })
 export class TypographyComponent {
 
-  constructor() { }
+  constructor(private tobase4Service:Tobase4Service) { }
   error: string;
   dragAreaClass: string;
+  fileName:string=null
   onFileChange(event: any) {
     let files: FileList = event.target.files;
     this.saveFiles(files);
@@ -47,8 +49,14 @@ export class TypographyComponent {
     if (files.length > 1) this.error = "Only one file at time allow";
     else {
       this.error = "";
-      console.log(files[0].size,files[0].name,files[0].type);
+      this.fileName=files[0].name
+      // console.log(files[0].name,files[0].type);
+     
+console.log(this.tobase4Service.getBase64(files[0]))
     }
+
+
+    
   }
 
   

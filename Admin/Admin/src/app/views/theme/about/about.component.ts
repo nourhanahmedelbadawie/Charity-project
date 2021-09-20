@@ -1,28 +1,13 @@
-import { Component, HostListener, SecurityContext, ViewEncapsulation } from '@angular/core';
-import { DomSanitizer } from '@angular/platform-browser';
-import { AlertConfig } from 'ngx-bootstrap/alert';
-
-// such override allows to keep some initial values
-
-export function getAlertConfig(): AlertConfig {
-  return Object.assign(new AlertConfig(), { type: 'success' });
-}
+import { Component, HostListener, OnInit } from '@angular/core';
 
 @Component({
-  templateUrl: 'alerts.component.html',
-  encapsulation: ViewEncapsulation.None,
-  styles: [
-    `
-  .alert-md-local {
-    background-color: #009688;
-    border-color: #00695C;
-    color: #fff;
-  }
-  `
-  ],
-  providers: [{ provide: AlertConfig, useFactory: getAlertConfig }]
+  selector: 'app-about',
+  templateUrl: './about.component.html',
+  styleUrls: ['./about.component.scss']
 })
-export class AlertsComponent {
+export class AboutComponent implements OnInit {
+
+  constructor() { }
 
   error: string;
   dragAreaClass: string;

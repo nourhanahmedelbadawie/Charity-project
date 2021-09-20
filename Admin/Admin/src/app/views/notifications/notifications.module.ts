@@ -14,6 +14,7 @@ import { ModalsComponent } from './modals.component';
 
 // Notifications Routing
 import { NotificationsRoutingModule } from './notifications-routing.module';
+import { NotificationsComponent } from '../theme/notifications/notifications.component';
 
 @NgModule({
   imports: [
@@ -25,7 +26,8 @@ import { NotificationsRoutingModule } from './notifications-routing.module';
   declarations: [
     AlertsComponent,
     BadgesComponent,
-    ModalsComponent
+    ModalsComponent,
+    NotificationsComponent
   ]
 })
 export class NotificationsModule { }
