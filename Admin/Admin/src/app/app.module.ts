@@ -26,8 +26,9 @@ import { P404Component } from './views/error/404.component';
 import { P500Component } from './views/error/500.component';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './views/register/register.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AngularEditorModule } from '@kolkov/angular-editor';
+import { UserInterceptor } from './provider/user.interceptor';
 
 
 
@@ -95,6 +96,12 @@ ReactiveFormsModule
       provide: LocationStrategy,
       useClass: HashLocationStrategy
     },
+      {
+        provide:HTTP_INTERCEPTORS,
+        useClass:UserInterceptor,
+        multi:true
+      }
+     ,
     IconSetService,
   ],
   bootstrap: [ AppComponent ]

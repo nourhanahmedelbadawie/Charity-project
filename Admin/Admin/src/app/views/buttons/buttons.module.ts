@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 
 import { ButtonsComponent } from './buttons.component';
@@ -20,7 +20,7 @@ import { SingleAchievmentComponent } from './single-achievment/single-achievment
     CommonModule,
     ButtonsRoutingModule,
     BsDropdownModule.forRoot(),
-    FormsModule
+    FormsModule, ReactiveFormsModule
   ],
   declarations: [
     ButtonsComponent,

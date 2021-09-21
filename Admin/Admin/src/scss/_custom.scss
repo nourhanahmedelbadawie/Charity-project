@@ -17,6 +17,9 @@ main > .container-fluid {
   padding-top: 85px !important;
   position: relative;
 }
+button:disabled{
+  cursor: not-allowed;
+}
 // header
 .header-fixed .app-header {
   background: #eeeeee !important;
@@ -252,6 +255,17 @@ form {
     color: #f92b20 !important;
   }
 }
+.upload {
+  position:relative ;
+  ::-webkit-file-upload-button{
+    background-color: red !important;
+    position: absolute;
+    right: 1px;
+    width: 160px;
+    opacity: 0;
+    cursor: pointer;
+  }
+}
 .main-btn {
   padding: 10px;
   text-align: center;
@@ -269,13 +283,14 @@ form {
   width: 100%;
   .text {
     border: 2px solid #28246b;
-    height: 150px;
+    min-height: 150px;
     border-radius: 20px;
     display: flex;
     justify-content: center;
     flex-direction: column;
     width: 100%;
     align-items: center;
+    padding: 10px;
     span {
       margin-bottom: 10px;
     }
@@ -442,4 +457,15 @@ table {
 }
 .hr_sec {
   background-color: red;
+}
+
+//Home
+.aboutFilename{
+  max-width: 53%;
+  max-height: 52px;
+  display: flex;
+  overflow: auto;
+  span{
+    font-size: 0.7rem;
+  }
 }

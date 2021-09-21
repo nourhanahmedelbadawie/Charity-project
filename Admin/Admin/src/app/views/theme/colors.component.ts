@@ -1,54 +1,80 @@
-import { Component, HostListener, Inject, OnInit } from '@angular/core';
-import { DOCUMENT } from '@angular/common';
-import { getStyle, rgbToHex } from '@coreui/coreui/dist/js/coreui-utilities';
+import { Component, HostListener, Inject, OnInit } from "@angular/core";
+import { DOCUMENT } from "@angular/common";
+import { getStyle, rgbToHex } from "@coreui/coreui/dist/js/coreui-utilities";
+import Swal from "sweetalert2";
+import { FormBuilder, Validators } from "@angular/forms";
+import { Tobase4Service } from "../../common/tobase4.service";
+import { ConfigService } from "../../config/config.service";
 
 @Component({
-  templateUrl: 'colors.component.html'
+  templateUrl: "colors.component.html",
 })
 export class ColorsComponent implements OnInit {
-  error: string;
+  fileName: string = null;
+  imageFilename2: string = null;
+  imageFilename3: string = null;
+
   dragAreaClass: string;
-  onFileChange(event: any) {
+  CountSection=[1]
+  addCountSection(){
+    this.CountSection.push(this.CountSection.length);
+  }
+  onFileChange(event: any, flag) {
     let files: FileList = event.target.files;
-    this.saveFiles(files);
+    this.saveFiles(files, flag);
+  }
+  onpdfChange(){
+    
   }
   ngOnInit() {
     this.dragAreaClass = "dragarea";
   }
-  @HostListener("dragover", ["$event"]) onDragOver(event: any) {
-    this.dragAreaClass = "droparea";
-    event.preventDefault();
-  }
-  @HostListener("dragenter", ["$event"]) onDragEnter(event: any) {
-    this.dragAreaClass = "droparea";
-    event.preventDefault();
-  }
-  @HostListener("dragend", ["$event"]) onDragEnd(event: any) {
-    this.dragAreaClass = "dragarea";
-    event.preventDefault();
-  }
-  @HostListener("dragleave", ["$event"]) onDragLeave(event: any) {
-    this.dragAreaClass = "dragarea";
-    event.preventDefault();
-  }
-  @HostListener("drop", ["$event"]) onDrop(event: any) {
-    this.dragAreaClass = "dragarea";
-    event.preventDefault();
-    event.stopPropagation();
-    if (event.dataTransfer.files) {
-      let files: FileList = event.dataTransfer.files;
-      this.saveFiles(files);
-    }
-  }
+  constructor(
+    private tobase4Service: Tobase4Service,
+    private fb: FormBuilder,
+    private configService: ConfigService
+  ) {}
 
-  saveFiles(files: FileList) {
+  saveFiles(files: FileList, flag) {
+    console.log(files);
 
-    if (files.length > 1) this.error = "Only one file at time allow";
-    else {
-      this.error = "";
-      console.log(files[0].size,files[0].name,files[0].type);
-    }
+    flag === 1 ? (this.fileName = files[0].name) : false;
+    flag === 2 ? (this.imageFilename2 = files[0].name) : false;
+    flag === 3 ? (this.imageFilename3 = files[0].name) : false;
   }
+  // submotion form
+  docForm = this.fb.group({
+    title: ["", Validators.required],
+    subtitle: ["", Validators.required],
+    about_section_title: ["", Validators.required],
+    about_section_subtitle: ["", Validators.required],
+  });
+  submit() {
+    this.configService
+      .sendHomeScreen(JSON.stringify(this.docForm.value))
 
-  
+      .subscribe(
+        (data: any) => {
+          // this.loginForm.reset()
+
+          Swal.fire({
+            title: "success",
+            text: "Send successfuly",
+            icon: "success",
+            confirmButtonText: "Ok",
+          });
+        },
+        (err) => {
+          // this.loginForm.reset()
+          console.log(err);
+
+          Swal.fire({
+            title: "Error",
+            text: "Something went wrong ",
+            icon: "error",
+            confirmButtonText: "Ok",
+          });
+        }
+      );
+  }
 }

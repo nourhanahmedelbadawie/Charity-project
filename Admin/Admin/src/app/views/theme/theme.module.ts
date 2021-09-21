@@ -4,18 +4,32 @@ import { NgModule } from '@angular/core';
 
 import { ColorsComponent } from './colors.component';
 import { TypographyComponent } from './typography.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { UserInterceptor } from '../../provider/user.interceptor';
+
+
 
 // Theme Routing
 import { ThemeRoutingModule } from './theme-routing.module';
+import { HttpClientModule ,HTTP_INTERCEPTORS } from '@angular/common/http';
 
 @NgModule({
   imports: [
     CommonModule,
-    ThemeRoutingModule
+    ThemeRoutingModule ,
+    FormsModule, ReactiveFormsModule ,
+    HttpClientModule
   ],
   declarations: [
     ColorsComponent,
-    TypographyComponent
+    TypographyComponent 
+  ] ,
+  providers: [
+    {
+      provide:HTTP_INTERCEPTORS,
+      useClass:UserInterceptor,
+      multi:true
+    }
   ]
 })
 export class ThemeModule { }

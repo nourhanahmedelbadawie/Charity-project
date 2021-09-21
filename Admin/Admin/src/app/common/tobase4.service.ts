@@ -16,4 +16,14 @@ export class Tobase4Service {
       console.log('Error: ', error);
     };
   }
+  getFile(file) {
+    var reader = new FileReader();
+    reader.readAsText(file);
+    reader.onload = function () {
+      console.log(reader.result);
+    };
+    reader.onerror = function (error) {
+      console.log('Error: ', error);
+    };
+  }
 }

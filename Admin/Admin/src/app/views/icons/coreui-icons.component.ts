@@ -1,25 +1,23 @@
-import { Component, HostListener, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { Platform } from '@angular/cdk/platform';
+import { Component, HostListener, OnInit } from "@angular/core";
+import { ActivatedRoute } from "@angular/router";
+import { Platform } from "@angular/cdk/platform";
 
-import { IconSetService } from '@coreui/icons-angular';
+import { IconSetService } from "@coreui/icons-angular";
 
 @Component({
-  templateUrl: 'coreui-icons.component.html',
-  styleUrls: ['coreui-icons.component.scss']
+  templateUrl: "coreui-icons.component.html",
+  styleUrls: ["coreui-icons.component.scss"],
 })
 export class CoreUIIconsComponent implements OnInit {
-  public title = 'CoreUI Icons';
+  public title = "CoreUI Icons";
   public icons = [];
-  error: string;
+  fileName: string = null;
 
   constructor(
     public platform: Platform,
     private route: ActivatedRoute,
     public iconSet: IconSetService
-  ) {
-    
-  }
+  ) {}
 
   dragAreaClass: string;
   onFileChange(event: any) {
@@ -56,13 +54,8 @@ export class CoreUIIconsComponent implements OnInit {
   }
 
   saveFiles(files: FileList) {
+    console.log(files);
 
-    if (files.length > 1) this.error = "Only one file at time allow";
-    else {
-      this.error = "";
-      console.log(files[0].size,files[0].name,files[0].type);
-    }
+    this.fileName = files[0].name;
   }
-
-  
 }

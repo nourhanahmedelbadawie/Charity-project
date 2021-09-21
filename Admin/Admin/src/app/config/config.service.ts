@@ -6,8 +6,7 @@ import { HttpHeaders } from '@angular/common/http';
 const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type':  'application/json',
-    Authorization: 'my-auth-token'
-  })
+observe: 'response'  })
 };
 
 @Injectable({
@@ -22,7 +21,7 @@ export class ConfigService {
 
   constructor(private http: HttpClient) { }
   login(user: any): Observable<any> {
-      return this.http.post<any>(`${this.configUrl}login/`, user, httpOptions)    
+      return this.http.post<any>(`${this.configUrl}login/`, user   ,httpOptions )
     .pipe(
       catchError(this.handleError)
     );
@@ -33,8 +32,7 @@ export class ConfigService {
       // A client-side or network error occurred. Handle it accordingly.
       console.error('An error occurred:', error.error);
     } else {
-      // The backend returned an unsuccessful response code.
-      // The response body may contain clues as to what went wrong.
+      
       console.error(
         `Backend returned code ${error.status}, body was: `, error.error);
     }
@@ -42,5 +40,34 @@ export class ConfigService {
     return throwError(
       'Something bad happened; please try again later.');
   }
+// =================================== Home=================================
+sendHomeScreen(obj: any): Observable<any> {
+  return this.http.post<any>(`${this.configUrl}HomeScreen/`, obj, httpOptions)    
+.pipe(
+  catchError(this.handleError)
+);
+}
 
+// =================================== Documnet=================================
+sendDocScreen(obj: any): Observable<any> {
+  return this.http.post<any>(`${this.configUrl}HomeScreen/`, obj, httpOptions)    
+.pipe(
+  catchError(this.handleError)
+);
+}
+
+// achivemnt
+getAchievement(): Observable<any> {
+  return this.http.get(`${this.configUrl}get_all_achievements/`)    
+.pipe(
+  catchError(this.handleError)
+);
+}
+
+sendAchievement(obj: any): Observable<any> {
+  return this.http.post<any>(`${this.configUrl}add_achievement/`, obj, httpOptions)    
+.pipe(
+  catchError(this.handleError)
+);
+}
 }

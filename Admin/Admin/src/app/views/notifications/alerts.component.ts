@@ -1,30 +1,34 @@
-import { Component, HostListener, SecurityContext, ViewEncapsulation } from '@angular/core';
-import { DomSanitizer } from '@angular/platform-browser';
-import { AlertConfig } from 'ngx-bootstrap/alert';
+import {
+  Component,
+  HostListener,
+  SecurityContext,
+  ViewEncapsulation,
+} from "@angular/core";
+import { DomSanitizer } from "@angular/platform-browser";
+import { AlertConfig } from "ngx-bootstrap/alert";
 
 // such override allows to keep some initial values
 
 export function getAlertConfig(): AlertConfig {
-  return Object.assign(new AlertConfig(), { type: 'success' });
+  return Object.assign(new AlertConfig(), { type: "success" });
 }
 
 @Component({
-  templateUrl: 'alerts.component.html',
+  templateUrl: "alerts.component.html",
   encapsulation: ViewEncapsulation.None,
   styles: [
     `
-  .alert-md-local {
-    background-color: #009688;
-    border-color: #00695C;
-    color: #fff;
-  }
-  `
+      .alert-md-local {
+        background-color: #009688;
+        border-color: #00695c;
+        color: #fff;
+      }
+    `,
   ],
-  providers: [{ provide: AlertConfig, useFactory: getAlertConfig }]
+  providers: [{ provide: AlertConfig, useFactory: getAlertConfig }],
 })
 export class AlertsComponent {
-
-  error: string;
+  fileName: string = null;
   dragAreaClass: string;
   onFileChange(event: any) {
     let files: FileList = event.target.files;
@@ -60,13 +64,8 @@ export class AlertsComponent {
   }
 
   saveFiles(files: FileList) {
+    console.log(files);
 
-    if (files.length > 1) this.error = "Only one file at time allow";
-    else {
-      this.error = "";
-      console.log(files[0].size,files[0].name,files[0].type);
-    }
+    this.fileName = files[0].name;
   }
-
-  
 }

@@ -1,7 +1,9 @@
+import { routes } from './../../app.routing';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import {  ConfigService } from "../../config/config.service";
 import Swal from 'sweetalert2'
+import {  Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -10,7 +12,7 @@ import Swal from 'sweetalert2'
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private fb: FormBuilder ,private configService:ConfigService)  { 
+  constructor(private fb: FormBuilder ,private configService:ConfigService ,  private route: Router,)  { 
     
   }
   loginForm = this.fb.group({
@@ -29,7 +31,10 @@ export class LoginComponent implements OnInit {
   this.configService.login( JSON.stringify(this.loginForm.value))
 
   .subscribe((data: any) =>{
-    // this.loginForm.reset()
+    console.log(data)
+
+  localStorage.setItem("token", data.token);
+
 
     Swal.fire({
       title: 'success',
@@ -37,9 +42,10 @@ export class LoginComponent implements OnInit {
       icon: 'success',
       confirmButtonText: 'Ok'
     })
+    this.route.navigate(['/admin/home']);
+
 
   }  ,(err)=>{
-    // this.loginForm.reset()
     console.log(err)
 
     Swal.fire({

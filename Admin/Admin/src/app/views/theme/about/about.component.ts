@@ -1,15 +1,14 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from "@angular/core";
 
 @Component({
-  selector: 'app-about',
-  templateUrl: './about.component.html',
-  styleUrls: ['./about.component.scss']
+  selector: "app-about",
+  templateUrl: "./about.component.html",
+  styleUrls: ["./about.component.scss"],
 })
 export class AboutComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  error: string;
+  fileName: string = null;
   dragAreaClass: string;
   onFileChange(event: any) {
     let files: FileList = event.target.files;
@@ -45,13 +44,8 @@ export class AboutComponent implements OnInit {
   }
 
   saveFiles(files: FileList) {
+    console.log(files);
 
-    if (files.length > 1) this.error = "Only one file at time allow";
-    else {
-      this.error = "";
-      console.log(files[0].size,files[0].name,files[0].type);
-    }
+    this.fileName = files[0].name;
   }
-
-  
 }
