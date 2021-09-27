@@ -37,8 +37,8 @@ button:disabled{
   background: #ffffff;
   .nav-link {
     color: #28246b;
-    &:hover {
-      color: #28246b;
+    &:hover , &.active {
+      color: #7cc249;
       background: #f6f9fc;
     }
   }
@@ -127,17 +127,18 @@ li.search-nav {
     background-repeat: no-repeat;
     fill: red;
   }
-  .icon-speedometer:before {
-    background-image: url(../assets/img/images-admin/tabs_icon_dash/home.svg);
-  }
+
+  
+
+  
   .icon-pencil:before {
     background-image: url(../assets/img/images-admin/tabs_icon_dash/home_1.svg);
   }
   .icon-puzzle:before {
-    background-image: url(../assets/img/images-admin/tabs_icon_dash/doc.svg);
+    background-image: url(../assets/img/images-admin/tabs_icon_dash/doc_1.svg);
   }
   .icon-cursor:before {
-    background-image: url(../assets/img/images-admin/tabs_icon_dash/achievenbet.svg);
+    background-image: url(../assets/img/images-admin/tabs_icon_dash/ach_1.svg);
   }
   .icon-pie-chart:before {
     background-image: url(../assets/img/images-admin/tabs_icon_dash/hand.svg);
@@ -158,6 +159,39 @@ li.search-nav {
   &:nth-of-type(8) .icon-star::before {
     background-image: url(../assets/img/images-admin/tabs_icon_dash/about.svg);
   }
+  &:hover  , &.active{
+ 
+    
+    .icon-pencil:before {
+      background-image: url(../assets/img/images-admin/tabs_icon_dash/home_2.svg);
+    }
+    .icon-puzzle:before {
+      background-image: url(../assets/img/images-admin/tabs_icon_dash/doc_2.svg);
+    }
+    .icon-cursor:before {
+      background-image: url(../assets/img/images-admin/tabs_icon_dash/ach_2.svg);
+    }
+    .icon-pie-chart:before {
+      background-image: url(../assets/img/images-admin/tabs_icon_dash/hand_2.svg);
+    }
+    .icon-star:nth-of-type(1)::before {
+      background-image: url(../assets/img/images-admin/tabs_icon_dash/hand_2.svg);
+    }
+    .icon-bell:before {
+      background-image: url(../assets/img/images-admin/tabs_icon_dash/donation_2.svg);
+    }
+    .icon-calculator:before {
+      background-image: url(../assets/img/images-admin/tabs_icon_dash/doner_2.svg);
+    }
+  
+    .icon-ban:before {
+      background-image: url(../assets/img/images-admin/tabs_icon_dash/settings_2.svg);
+    }
+    &:nth-of-type(8) .icon-star::before {
+      background-image: url(../assets/img/images-admin/tabs_icon_dash/about_2.svg);
+    }
+  }
+
 }
 
 //comom class
@@ -214,6 +248,7 @@ h4 {
   width: 80%;
   margin: 0 auto;
 
+
   &::after {
     border: 2px solid #7cc249;
     content: "";
@@ -226,11 +261,14 @@ h4 {
     height: 88%;
     border-top: none;
     left: 0px;
-    z-index: -1;
+    z-index: -0;
   }
   .card-body {
     width: 730px;
     margin: 0 auto;
+    position: relative;
+ 
+    z-index: 5;
   }
 }
 form {
