@@ -15,9 +15,9 @@
               <span
                 ><img src="../../../assets/img/images-admin/home/upload.svg"
               /></span>
-              <span *ngIf="!fileName">Drag and drop Photo here</span>
+              <span *ngIf="!imageFilename1">Drag and drop Photo here</span>
 
-              <span *ngIf="fileName"> {{ fileName }} </span>
+              <span *ngIf="imageFilename1"> {{ imageFilename1 }} </span>
               <a
                 href="javascript:void(0)"
                 class="main-btn"
@@ -27,12 +27,12 @@
               </a>
 
               <input
-                type="file"
-                #file
-                multiple="false"
-                (change)="onFileChange($event)"
-                style="display: none"
-              />
+              type="file"
+              #file
+              multiple="false"
+              (change)="onFileChange($event, 1)"
+              style="display: none"
+            />
             </div>
           </div>
         </div>
@@ -69,9 +69,9 @@
                 <span
                   ><img src="../../../assets/img/images-admin/home/upload.svg"
                 /></span>
-                <span *ngIf="!fileName">Drag and drop Photo here</span>
-  
-                <span *ngIf="fileName"> {{ fileName }} </span>
+                <span *ngIf="!imageFilename2">Drag and drop Photo here</span>
+
+                <span *ngIf="imageFilename2"> {{ imageFilename2 }} </span>
                 <a
                   href="javascript:void(0)"
                   class="main-btn"
@@ -81,12 +81,12 @@
                 </a>
   
                 <input
-                  type="file"
-                  #file
-                  multiple="false"
-                  (change)="onFileChange($event)"
-                  style="display: none"
-                />
+                type="file"
+                #file
+                multiple="false"
+                (change)="onFileChange($event, 2)"
+                style="display: none"
+              />
               
             </div>
           </div>
@@ -96,7 +96,7 @@
           <label for="exampleInputEmail1">Body</label>
 
           <textarea   class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-              placeholder="Write the Subtitle"
+              placeholder="Write the body"
               formControlName="body"></textarea>
         </div>
 </section>

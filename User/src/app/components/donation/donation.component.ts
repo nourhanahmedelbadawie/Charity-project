@@ -8,10 +8,11 @@ import { MatFormFieldControl } from '@angular/material';
   styleUrls: ['./donation.component.scss']
 })
 export class DonationComponent implements OnInit {
+  
 
   currentbreadcrumb:{}={
-    title:"Document",
-    subtitle:"Document",
+    title:"Donation",
+    subtitle:"lorem ipsum",
     bg:"../../../assets/images/about/about_manner.jpg",
     link:"/doc"
   }

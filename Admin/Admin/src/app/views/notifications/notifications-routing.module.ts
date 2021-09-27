@@ -4,12 +4,14 @@ import { Routes, RouterModule } from '@angular/router';
 import { AlertsComponent } from './alerts.component';
 import { BadgesComponent } from './badges.component';
 import { ModalsComponent } from './modals.component';
+import {  AlldonationComponent } from "./alldonation/alldonation.component";
+
 
 const routes: Routes = [
   {
     path: '',
     data: {
-      title: 'Notifications'
+      title: ''
     },
     children: [
       {
@@ -17,8 +19,15 @@ const routes: Routes = [
         redirectTo: 'donation'
       },
       {
-        path: 'donation',
+        path: 'newdonation',
         component: AlertsComponent,
+        data: {
+          title: 'Alerts'
+        }
+      },
+      {
+        path: 'donation',
+        component: AlldonationComponent,
         data: {
           title: 'Alerts'
         }

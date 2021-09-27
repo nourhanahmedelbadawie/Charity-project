@@ -31,9 +31,9 @@ export class HomeComponent implements OnInit {
      this.homeStaticData= (data)
          // breadcrumb
     this.currentbreadcrumb={
-      title:`http://178.62.19.101:8888/${this.homeStaticData.HomeScreenMain.title}` ,
+      title:`${this.homeStaticData.HomeScreenMain.title}` ,
       subtitle:this.homeStaticData.HomeScreenMain.subtitle,
-      bg: this.homeStaticData.HomeScreenMain.cover_path[0]
+      bg: '../../../assets/images/about/about_manner.jpg'
       ,
       link:"",
       home:true
