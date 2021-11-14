@@ -19,7 +19,7 @@ const httpOptions = {
 })
 export class GetStaticDataService {
 
-  configUrl = 'http://178.62.19.101:8888/index.php/api';
+  configUrl = 'http://137.184.108.244:8081/index.php/api';
 
 
   constructor(private http: HttpClient) { }
@@ -27,6 +27,13 @@ export class GetStaticDataService {
   // get Home data
   getHomeData(): Observable<any> {
       return this.http.get<any>(`${this.configUrl}/getHomescreen/`, httpOptions)    
+    .pipe(
+      catchError(this.handleError)
+    );
+  }
+    // get urgent data
+    getUrgentData(): Observable<any> {
+      return this.http.get<any>(`${this.configUrl}/departments/get_urgent_department`, httpOptions)    
     .pipe(
       catchError(this.handleError)
     );
@@ -39,9 +46,82 @@ export class GetStaticDataService {
       catchError(this.handleError)
     );
   }
+  getDocPageStaticData(): Observable<any> {
+    return this.http.get<any>(`${this.configUrl}/getStatic_docs`, httpOptions)    
+  .pipe(
+    catchError(this.handleError)
+  );
+}
+    // get Achievemnt data
+    getAchcData(): Observable<any> {
+      return this.http.get<any>(`${this.configUrl}/get_all_achievements`, httpOptions)    
+    .pipe(
+      catchError(this.handleError)
+    );
+    }
+    getOneAchData(id): Observable<any> {
+      return this.http.get<any>(`${this.configUrl}/achievements/${id}`, httpOptions)    
+    .pipe(
+      catchError(this.handleError)
+    );
+
+  }
+    // get About  data
+
+  
+
+<<<<<<< HEAD
+  getAboutData(): Observable<any> {
+    return this.http.get<any>(`${this.configUrl}/getAboutUsMainPage`, httpOptions)    
+  .pipe(
+    catchError(this.handleError)
+  );
+
+}
 
 
+// get Partner Data 
 
+getPartnerData(): Observable<any> {
+  return this.http.get<any>(`${this.configUrl}/getStaticPartners/`, httpOptions)    
+=======
+    // get Achievemnt data
+    getAchcData(): Observable<any> {
+      return this.http.get<any>(`${this.configUrl}/get_all_achievements`, httpOptions)    
+    .pipe(
+      catchError(this.handleError)
+    );
+    }
+    getOneAchData(id): Observable<any> {
+      return this.http.get<any>(`${this.configUrl}/achievements/${id}`, httpOptions)    
+    .pipe(
+      catchError(this.handleError)
+    );
+
+  }
+    // get About  data
+
+  
+
+  getAboutData(): Observable<any> {
+    return this.http.get<any>(`${this.configUrl}/getAboutUsMain`, httpOptions)    
+  .pipe(
+    catchError(this.handleError)
+  );
+
+}
+
+
+// get Partner Data 
+
+getPartnerData(): Observable<any> {
+  return this.http.get<any>(`${this.configUrl}/dashboard/static_partners/`, httpOptions)    
+>>>>>>> df7ecfe78ea44ab757be34bf3fabeaa0c077ee1f
+.pipe(
+  catchError(this.handleError)
+);
+
+}
 
 
 
@@ -56,6 +136,7 @@ export class GetStaticDataService {
         `Backend returned code ${error.status}, body was: `, error.error);
     }
     // Return an observable with a user-facing error message.
+    
     return throwError(
       'Something bad happened; please try again later.');
   }

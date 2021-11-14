@@ -56,7 +56,8 @@ import { AboutComponent } from './views/theme/about/about.component';
 import { SettingComponent } from './views/theme/setting/setting.component';
 import { AuthGuard } from './config/authguard.guard';
 import { EditAchievmentComponent } from './views/buttons/edit-achievment/edit-achievment.component';
-import { AlldonationComponent } from './views/notifications/alldonation/alldonation.component';
+import { SingleDonationComponent } from './views/notifications/single-donation/single-donation.component';
+import { NewDonationComponent } from './views/notifications/new-donation/new-donation.component';
 
 @NgModule({
  schemas: [ CUSTOM_ELEMENTS_SCHEMA ]  , 
@@ -94,7 +95,8 @@ ReactiveFormsModule
     AboutComponent,
     SettingComponent,
     EditAchievmentComponent,
-    AlldonationComponent
+    SingleDonationComponent,
+    NewDonationComponent
   ],
   providers: [
     {

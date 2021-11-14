@@ -17,8 +17,8 @@ export class ConfigService {
 
 
 
-  configUrl = 'http://178.62.19.101:8888/index.php/api/dashboard/';
-  configViewUrl="http://178.62.19.101:8888/index.php/api"
+  configUrl = 'http://137.184.108.244:8081/index.php/api/dashboard/';
+  configViewUrl="http://137.184.108.244:8081/index.php/api"
 
   constructor(private http: HttpClient , private route: Router) { }
   login(user: any): Observable<any> {
@@ -91,10 +91,140 @@ sendAchievement(obj: any): Observable<any> {
 // ============================================== Partners ==================================================
 
 sendPartner(obj: any): Observable<any> {
-  return this.http.post<any>(`${this.configUrl}partners/add_partner`, obj, httpOptions)    
+  return this.http.post<any>(`${this.configUrl}static_partners/`, obj, httpOptions)    
 .pipe(
   catchError(this.handleError)
 );
 }
+sendPartnerLogo(obj: any): Observable<any> {
+  return this.http.post<any>(`${this.configUrl}partners/add_partner/`, obj, httpOptions)    
+.pipe(
+  catchError(this.handleError)
+);
+}
+
+
+
+// ============================================== Donor ==================================================
+
+
+
+getAllDonors(): Observable<any> {
+  return this.http.get<any>(`${this.configUrl}get_all_donors/`, httpOptions)    
+.pipe(
+  catchError(this.handleError)
+);
+}
+
+
+// ============================================== Profile ==================================================
+
+updateUser(obj: any): Observable<any> {
+  return this.http.post<any>(`${this.configUrl}edit_profile/`, obj, httpOptions)    
+.pipe(
+  catchError(this.handleError)
+);
+}
+
+
+
+
+
+
+// ============================================== About us ==================================================
+
+
+send_about_us_main(obj: any): Observable<any> {
+  return this.http.post<any>(`${this.configUrl}about_us_main/`, obj, httpOptions)    
+.pipe(
+  catchError(this.handleError)
+);
+}
+
+send_about_us_section_two(obj: any): Observable<any> {
+  return this.http.post<any>(`${this.configUrl}about_us_section_two/`, obj, httpOptions)    
+.pipe(
+  catchError(this.handleError)
+);
+}
+send_about_us_why_choose_us_01(obj: any): Observable<any> {
+  return this.http.post<any>(`${this.configUrl}about_us_why_choose_us_01/`, obj, httpOptions)    
+.pipe(
+  catchError(this.handleError)
+);
+}
+send_about_us_why_choose_us_02(obj: any): Observable<any> {
+  return this.http.post<any>(`${this.configUrl}about_us_why_choose_us_02/`, obj, httpOptions)    
+.pipe(
+  catchError(this.handleError)
+);
+}
+send_about_us_why_choose_us_03(obj: any): Observable<any> {
+  return this.http.post<any>(`${this.configUrl}about_us_why_choose_us_03/`, obj, httpOptions)    
+.pipe(
+  catchError(this.handleError)
+);
+}
+send_about_us_why_choose_us_04(obj: any): Observable<any> {
+  return this.http.post<any>(`${this.configUrl}about_us_why_choose_us_04/`, obj, httpOptions)    
+.pipe(
+  catchError(this.handleError)
+);
+}
+
+
+
+
+// ============================================== Department ==================================================
+
+
+getNormalDepartment(): Observable<any> {
+  return this.http.get<any>(`${this.configViewUrl}/departments/get_normal_departments`, httpOptions)    
+.pipe(
+  catchError(this.handleError)
+);
+}
+getUrgentDepartment(): Observable<any> {
+  return this.http.get<any>(`${this.configViewUrl}/departments/get_urgent_department`, httpOptions)    
+.pipe(
+  catchError(this.handleError)
+);
+}
+6
+
+makeUrgentDepartment(id ,obj): Observable<any> {
+  return this.http.put<any>(`${this.configUrl}departments/make_urgent/${id}`, obj , httpOptions)    
+.pipe(
+  catchError(this.handleError)
+);
+}
+addNewDepartment(obj){
+  return this.http.post<any>(`${this.configUrl}departments/add_department`, obj , httpOptions)    
+  .pipe(
+    catchError(this.handleError)
+  );
+}
+
+
+
+
+
+
+getOneDonor(id): Observable<any> {
+  return this.http.get<any>(`${this.configViewUrl}donations/departmentDonations/${id}`, httpOptions)    
+.pipe(
+  catchError(this.handleError)
+);
+}
+
+
+
+
+
+
+
+
+
+
 
 }
